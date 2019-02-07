@@ -1,4 +1,4 @@
-# Pega 7 Tomcat Docker container
+# Pega 7/8 Tomcat Docker container
 
 This project produces a Docker image that you can use as a base image to create a complete Docker image for running Pega 7.  
 
