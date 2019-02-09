@@ -31,10 +31,6 @@ extract the Pega distribution to the same directory as the Dockerfile.  It is re
     COPY archives/prweb.war /opt/pega/prweb.war
     RUN unzip -q -d /opt/pega/prweb /opt/pega/prweb.war
     
-    # Expand pr sys managment to target directory
-    COPY archives/prsysmgmt.war /opt/pega/prsysmgmt.war
-    RUN unzip -q -d /opt/pega/prsysmgmt /opt/pega/prsysmgmt.war
-     
     # Make jdbc driver available to tomcat applications
     COPY /path/to/jdbcdriver.jar /usr/local/tomcat/lib/
 
@@ -67,7 +63,3 @@ Once the image is running, you can connect to the Pega 7 web application via the
 port.  To find this port (assuming you had them dynamically assigned as above), you can run 
 the `docker ps` command to print out the port bindings.  Look for the 8080 port and connect to
 it from your web browser at `http://host:port/prweb`.
-
-To connect to the PR System Management application, use the 'docker ps' command and look for
-the port mapped to 8090 and connect to it via a web browser at `http://host:port/prsysmgmt`. 
-The login credentials are defined in the [tomcat-users.xml](conf/tomcat-users.xml) file and should be overridden by your own file.

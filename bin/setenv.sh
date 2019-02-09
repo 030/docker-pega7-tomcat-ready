@@ -61,12 +61,5 @@ CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.authenticate=fals
 CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.ssl=false"
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.rmi.server.hostname=${JMX_SERVER_HOSTNAME}"	
 
-#
-# Setup SMA with auto discovery
-#
-CATALINA_OPTS="${CATALINA_OPTS} -DSMAAutoNodeDiscovery=true "
-CATALINA_OPTS="${CATALINA_OPTS} -DSMAAutoNodeDiscoveryJMXPort=${JMX_PORT} "
-CATALINA_OPTS="${CATALINA_OPTS} -DSMAAutoNodeDiscoveryPort=8080 "
-
 echo CATALINA_OPTS: \"${CATALINA_OPTS}\"
 
