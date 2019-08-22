@@ -1,5 +1,5 @@
-# Base image on tomcat 8 with OpenJDK JRE 8
-FROM tomcat:8-jre8
+# Base image on tomcat 9 with OpenJDK 11
+FROM tomcat:9-jdk11
 
 ENV PEGA_HOME=/opt/pega
 
