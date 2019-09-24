@@ -9,8 +9,16 @@
         <Resource name="UserDatabase" auth="Container" type="org.apache.catalina.UserDatabase" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" pathname="conf/tomcat-users.xml" />
     </GlobalNamingResources>
     <Service name="Catalina">
-        <Connector server="Apache" secure="true" port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" enableLookups="true" maxThreads="${maxThreads}" />
-        <Engine name="Catalina" defaultHost="localhost">
+        <Connector server="Apache" 
+                   secure="true"
+                   port="8080"
+                   protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" enableLookups="true" maxThreads="${maxThreads}" relaxedPathChars='[]|'
+                   relaxedQueryChars='[]:|{}^&#x5c;&#x60;&quot;&lt;&gt;'
+        />
+        <Engine name="Catalina"
+                defaultHost="localhost">
             <Realm className="org.apache.catalina.realm.LockOutRealm">
                 <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase" />
             </Realm>
@@ -20,4 +28,3 @@
         </Engine>
     </Service>
 </Server>
-
