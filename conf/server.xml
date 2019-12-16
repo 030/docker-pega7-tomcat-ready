@@ -21,6 +21,8 @@
                    connectionTimeout="20000"
                    redirectPort="8443" enableLookups="true"
                    maxThreads="${maxThreads}"
+                   relaxedPathChars='[]|'
+                   relaxedQueryChars='[]:|{}^&#x5c;&#x60;&quot;&lt;&gt;'
         />
         <Engine name="Catalina"
                 defaultHost="localhost">
