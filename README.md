@@ -2,7 +2,7 @@
 
 This project produces a Docker image that you can use as a base image to create a complete Docker image for running Pega 8.  
 
-This image is based on Tomcat 8 which is based on OpenJDK's Java 8 image. 
+This image is based on Tomcat 8.5.x which is based on OpenJDK's Java 8 image. 
 
 Supported features:
 
