@@ -10,7 +10,8 @@ COPY bin /usr/local/tomcat/bin/
 COPY error-page.xml.snippet ${CATALINA_HOME}
 
 # Usual maintenance
-RUN apt-get update && \
+RUN set -x && \
+    apt-get update && \
     apt-get install -y \
         zip && \
 # Cleanup apt
@@ -39,7 +40,9 @@ RUN apt-get update && \
     cat error-page.xml.snippet >> ${CATALINA_HOME}/conf/web.xml && \
     rm error-page.xml.snippet && \
 # Create pega directory for storing applications
-    mkdir -p $PEGA_HOME
+    mkdir -p $PEGA_HOME && \
+    apt-get remove -y zip && \
+    apt-get remove zip
 
 # Setup global database variables
 ENV DB_USERNAME=pega \
@@ -58,7 +61,7 @@ ENV JDBC_CLASS=org.postgresql.Driver \
     JDBC_MIN_IDLE=10 \
     JDBC_MAX_IDLE=50 \
     JDBC_MAX_WAIT=30000 \
-    JDBC_INITIAL_SIZE=50 \
+    JDBC_INITIAL_SIZE=5 \
     JDBC_VALIDATION_QUERY='SELECT 1'
 
 # Provide variables for the name of the rules and data schema
