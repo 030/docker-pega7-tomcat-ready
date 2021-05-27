@@ -11,7 +11,7 @@ COPY error-page.xml.snippet ${CATALINA_HOME}
 
 # Usual maintenance
 RUN set -x && \
-    apt-get update && \
+    apt-get update -y && \
     apt-get install -y \
         zip && \
 ###
