@@ -11,13 +11,13 @@ COPY error-page.xml.snippet ${CATALINA_HOME}
 
 # Usual maintenance
 RUN set -x && \
-    apt-get update -y && \
+    apt-get update && \
     apt-get install -y \
         zip && \
 ###
 # Remove python to reduce open cve criticals
 ##
-    apt-get purge --auto-remove \
+    apt-get purge -y --auto-remove \
       python && \
 # Cleanup apt
     apt-get clean && \
