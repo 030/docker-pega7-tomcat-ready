@@ -20,6 +20,8 @@ The image itself is not runnable directly because it does not come with the Pega
  web applications.  Therefore you must use this image as a base to construct an 
  executable Docker image.
 
+[![dockeri.co](https://dockeri.co/image/nlmacamp/docker-pega7-tomcat-ready)](https://hub.docker.com/r/nlmacamp/docker-pega7-tomcat-ready)
+
 ## Constructing your image
 
 The simplest way to use this image is to create your own Dockerfile with contents similar to the example below and 
